@@ -1,51 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Special For Keina</title>
-    <script src="https://dekatutorial.github.io/flwr/s.js"></script>
-    <style>
-      /* Sembunyikan watermark dengan CSS super kuat */
-      a, footer, [class*="watermark"], [id*="watermark"] {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-      }
-    </style>
-  </head>
-  <body>
+    <script src="script_baru.js"></script>
+</head>
+<body>
     <div class="open">
-      <i>❤️</i>
-      <span>Klik love nya</span>
+        <i>❤️</i>
+        <span>Klik love nya</span>
     </div>
 
-        <script>
-      /* Pengaturan Konten */
-      ucapan = 'SELAMAT BERJUANG KEINA';
-      musik = 'musik.mp3'; 
-      nomorWhatsapp = ``;
-      idTelegram = ``;
+    <script>
+        ucapan = 'SELAMAT BERJUANG KEINA';
+        musik = 'musik.mp3'; 
+        nomorWhatsapp = '';
+        idTelegram = '';
 
-      DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
+        DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
     </script>
-
-      musik = 'musik.mp3'; 
-      nomorWhatsapp = ``;
-      idTelegram = ``;
-
-      DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
-
-      // JURUS PENGHANCUR WATERMARK (Jalan tiap 0.1 detik)
-      setInterval(() => {
-        const elements = document.querySelectorAll('a, span, div');
-        elements.forEach((el) => {
-          if (el.innerText.includes('Deka') || el.innerText.includes('Tutorial') || el.innerText.includes('Template')) {
-            el.remove();
-          }
-        });
-      }, 100);
-    </script>
-  </body>
+</body>
 </html>
