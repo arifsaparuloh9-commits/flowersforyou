@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Special For You</title>
+    <title>Special For Keina</title>
     
     <style>
-      /* Sembunyikan semua elemen link dan watermark dengan CSS */
+      /* Menyembunyikan elemen sisa jika masih ada */
       a, footer, .watermark, #watermark, [class*="watermark"] {
         display: none !important;
         opacity: 0 !important;
@@ -24,27 +24,20 @@
     </div>
 
     <script>
-      ucapan = `Untuk Keina 
-      Selamat Karena sudah lulus poltekes`; 
+      // Kata-kata spesial buat Keina
+      ucapan = `Untuk Keina,
+Selamat karena sudah lulus Poltekkes! ✨`; 
+      
       musik = 'musik.mp3'; 
       nomorWhatsapp = ``;
       idTelegram = ``;
 
       DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
 
-      // JURUS PAKSA: Hapus paksa semua link (watermark) setiap 0.5 detik
+      // Membersihkan sisa watermark secara berkala
       setInterval(() => {
-        const links = document.getElementsByTagName('a');
-        for (let i = 0; i < links.length; i++) {
-          links[i].remove();
-        }
-        // Cari juga kalau ada div yang isinya promosi
-        const divs = document.getElementsByTagName('div');
-        for (let i = 0; i < divs.length; i++) {
-          if (divs[i].innerText.includes('Deka') || divs[i].innerText.includes('Tutorial')) {
-            divs[i].remove();
-          }
-        }
+        const elements = document.querySelectorAll('a, footer, .watermark');
+        elements.forEach(el => el.remove());
       }, 500);
     </script>
   </body>
