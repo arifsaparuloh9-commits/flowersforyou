@@ -6,9 +6,24 @@
     <title>Special For Keina</title>
     <script src="https://dekatutorial.github.io/flwr/s.js"></script>
     <style>
+        /* CSS ini akan menyembunyikan tulisan di bagian bawah secara paksa */
         body { background-color: #000; margin: 0; }
-        /* Sembunyikan watermark */
-        a, footer, [class*="watermark"] { display: none !important; }
+        
+        /* Menyasar semua elemen yang kemungkinan jadi tempat watermark */
+        a, footer, p, span, div {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sembunyikan link dan teks Deka Tutorial */
+        a[href*="dekatutorial"], 
+        .watermark, 
+        #watermark,
+        footer {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
     </style>
 </head>
 <body>
@@ -18,27 +33,23 @@
     </div>
 
     <script>
-        // Pengaturan Teks
         ucapan = 'SELAMAT BERJUANG KEINA';
         musik = 'musik.mp3'; 
         nomorWhatsapp = '';
         idTelegram = '';
 
-        // Menjalankan fungsi utama
-        try {
-            DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
-        } catch (e) {
-            console.log("Error loading script");
-        }
+        DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
 
-        // Penghancur watermark otomatis
+        // Script ini akan terus menyisir layar setiap 0.1 detik 
+        // untuk menghapus tulisan "Deka Tutorial" jika muncul
         setInterval(() => {
-            document.querySelectorAll('a, span').forEach((el) => {
-                if (el.innerText.includes('Deka') || el.innerText.includes('Tutorial')) {
-                    el.remove();
+            const elements = document.querySelectorAll('a, span, p, div');
+            elements.forEach((el) => {
+                if (el.innerText.includes('Deka') || el.innerText.includes('Tutorial') || el.innerText.includes('Template')) {
+                    el.remove(); // Hapus permanen dari layar
                 }
             });
-        }, 300);
+        }, 100);
     </script>
 </body>
 </html>
