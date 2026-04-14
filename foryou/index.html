@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Special For Keina</title>
+    <script src="https://dekatutorial.github.io/flwr/s.js"></script>
+    <style>
+      /* Sembunyikan watermark dengan CSS super kuat */
+      a, footer, [class*="watermark"], [id*="watermark"] {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+    </style>
   </head>
   <body>
     <div class="open">
       <i>❤️</i>
       <span>Klik love nya</span>
     </div>
-
-    <script>
-      // PASTE SEMUA KODE DARI script_baru.js DI SINI (Di antara tag script ini)
-      
-    </script>
 
     <script>
       /* Pengaturan Konten */
@@ -24,6 +29,16 @@
       idTelegram = ``;
 
       DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
+
+      // JURUS PENGHANCUR WATERMARK (Jalan tiap 0.1 detik)
+      setInterval(() => {
+        const elements = document.querySelectorAll('a, span, div');
+        elements.forEach((el) => {
+          if (el.innerText.includes('Deka') || el.innerText.includes('Tutorial') || el.innerText.includes('Template')) {
+            el.remove();
+          }
+        });
+      }, 100);
     </script>
   </body>
 </html>
