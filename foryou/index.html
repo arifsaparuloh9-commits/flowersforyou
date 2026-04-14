@@ -6,17 +6,11 @@
     <title>Special For You</title>
     
     <style>
-      a[href*="deka_tutorial"], 
-      a[href*="youtube.com"], 
-      a[href*="instagram.com"], 
-      a[href*="tiktok.com"],
-      .watermark, 
-      #watermark,
-      footer {
+      /* Sembunyikan semua elemen link dan watermark dengan CSS */
+      a, footer, .watermark, #watermark, [class*="watermark"] {
         display: none !important;
-        visibility: hidden !important;
         opacity: 0 !important;
-        pointer-events: none !important;
+        visibility: hidden !important;
       }
     </style>
 
@@ -29,13 +23,27 @@
     </div>
 
     <script>
-      /* Pengaturan Konten */
-      ucapan = `Semoga harimu menyenangkan!`; // Kamu bisa isi ucapan di sini
-      musik = 'musik.mp3'; // Pastikan file musik.mp3 ada di folder yang sama
+      ucapan = `Buat Kamu ✨`; 
+      musik = 'musik.mp3'; 
       nomorWhatsapp = ``;
       idTelegram = ``;
 
       DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
+
+      // JURUS PAKSA: Hapus paksa semua link (watermark) setiap 0.5 detik
+      setInterval(() => {
+        const links = document.getElementsByTagName('a');
+        for (let i = 0; i < links.length; i++) {
+          links[i].remove();
+        }
+        // Cari juga kalau ada div yang isinya promosi
+        const divs = document.getElementsByTagName('div');
+        for (let i = 0; i < divs.length; i++) {
+          if (divs[i].innerText.includes('Deka') || divs[i].innerText.includes('Tutorial')) {
+            divs[i].remove();
+          }
+        }
+      }, 500);
     </script>
   </body>
 </html>
