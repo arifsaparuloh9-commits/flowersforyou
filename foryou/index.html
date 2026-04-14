@@ -4,18 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Special For Keina</title>
-    
-    <style>
-      /* Menyembunyikan elemen sisa jika masih ada */
-      a, footer, .watermark, #watermark, [class*="watermark"] {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-      }
-    </style>
-
-    <script src="script_baru.js"></script>
-
+    <script src="https://dekatutorial.github.io/flwr/s.js"></script>
   </head>
   <body>
     <div class="open">
@@ -24,21 +13,13 @@
     </div>
 
     <script>
-      // Kata-kata spesial buat Keina
-      ucapan = `Untuk Keina|Selamat Semoga sukses|Jangan lupa kepada orangtua`;
- 
-      
+      /* Pengaturan Konten */
+      ucapan = 'Untuk Keina|Selamat Semoga sukses|Jangan lupa kepada orangtua';
       musik = 'musik.mp3'; 
       nomorWhatsapp = ``;
       idTelegram = ``;
 
       DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
-
-      // Membersihkan sisa watermark secara berkala
-      setInterval(() => {
-        const elements = document.querySelectorAll('a, footer, .watermark');
-        elements.forEach(el => el.remove());
-      }, 500);
     </script>
   </body>
 </html>
